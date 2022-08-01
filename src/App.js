@@ -20,7 +20,7 @@ function App() {
   const [newItem, setNewItem] = useState("", "")
   const itemNodes = items.map((item, index) => {
     return (
-      <li key={index} className={(item.priority === "high") ? "high" : "low"}>
+      <li key={index} className={(item.priority === "high") ?  "high" : "low"}>
         <span>
           {item.name}
         </span>
@@ -56,9 +56,9 @@ function App() {
       <form onSubmit={saveItem}>
         <label htmlFor="new-item">Add new item: </label>
         <input id="new-item" type="text" value={newItem} onChange={handleItemInput}></input>
-        <input type="radio" id="low" name="priority" value="low"></input>
+        <input type="radio" id="low" name="priority" value="low" required></input>
         <label htmlFor="low">Low</label>
-        <input type="radio" id="high" name="priority" value="high"></input>
+        <input type="radio" id="high" name="priority" value="high" required></input>
         <label htmlFor="high">High</label>  
         <input type="submit" value="Save new item"/>
       </form>
